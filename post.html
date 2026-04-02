@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<article class="post-article">
+  <div class="post-container">
+
+    <!-- Breadcrumb -->
+    <nav class="post-breadcrumb" aria-label="breadcrumb">
+      <a href="{{ '/' | relative_url }}">home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="{{ '/' | relative_url }}#blog">blog</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>{{ page.title | truncate: 40 }}</span>
+    </nav>
+
+    <!-- Post Header -->
+    <header class="post-header">
+      <div class="post-meta-top">
+        {% if page.tags %}
+          <div class="post-tags">
+            {% for tag in page.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <time class="post-date mono" datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+      </div>
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.excerpt %}
+        <p class="post-excerpt">{{ page.excerpt }}</p>
+      {% endif %}
+    </header>
+
+    <!-- Divider -->
+    <div class="post-divider">
+      <span class="mono">// begin_article</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="post-content prose">
+      {{ content }}
+    </div>
+
+    <!-- End marker -->
+    <div class="post-divider post-divider--end">
+      <div class="divider-line"></div>
+      <span class="mono">// end_article</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="post-nav">
+      {% if page.previous.url %}
+        <a class="post-nav-item post-nav-prev" href="{{ page.previous.url | relative_url }}">
+          <span class="nav-label mono">← prev</span>
+          <span class="nav-title">{{ page.previous.title }}</span>
+        </a>
+      {% else %}
+        <div></div>
+      {% endif %}
+      {% if page.next.url %}
+        <a class="post-nav-item post-nav-next" href="{{ page.next.url | relative_url }}">
+          <span class="nav-label mono">next →</span>
+          <span class="nav-title">{{ page.next.title }}</span>
+        </a>
+      {% endif %}
+    </nav>
+
+  </div>
+</article>

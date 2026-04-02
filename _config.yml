@@ -1,0 +1,47 @@
+title: Himanshu Kala
+tagline: AI QA Engineer · LLM Evaluation · Hallucination Detection
+description: >
+  AI Quality Assurance Engineer specializing in LLM output validation,
+  RAG testing, hallucination detection, and AI safety.
+url: "https://www.himanshukala.co.in"
+baseurl: ""
+author:
+  name: Himanshu Kala
+  email: hkala402@gmail.com
+  github: Hkala402
+  linkedin: himanshu-kala-436751235
+  location: Meerut, UP (Delhi NCR)
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:title/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Collections
+collections:
+  posts:
+    output: true
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Himanshu Kala"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md

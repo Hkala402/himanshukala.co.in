@@ -8,13 +8,15 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Barlow:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<!-- Scanlines -->
 <div class="scanlines"></div>
 
 <!-- NAV -->
@@ -93,12 +95,11 @@
     <div class="about-grid">
       <div class="about-text">
         <p>
-          I'm an AI Quality Assurance Engineer at Simublade Technology,
-          working on validating LLM outputs, ensuring factual accuracy,
-          and detecting hallucinations.
+          AI Quality Assurance Engineer with 2+ years of experience in LLM testing,
+          hallucination detection, and AI safety validation.
         </p>
         <p>
-          I specialize in RAG pipeline validation and AI system testing.
+          Specialized in RAG pipeline validation and AI system testing.
         </p>
       </div>
 
@@ -110,6 +111,10 @@
         <div class="info-row">
           <span class="info-key">Experience</span>
           <span class="info-val">2+ Years</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Location</span>
+          <span class="info-val">India</span>
         </div>
         <div class="info-row">
           <span class="info-key">Status</span>
@@ -202,19 +207,37 @@
       </div>
 
       <div class="contact-links">
-        <a href="mailto:your@email.com" class="contact-link">
-          <div class="contact-link-icon">EM</div>
+
+        <!-- EMAIL -->
+        <a href="mailto:hkala402@gmail.com" class="contact-link">
+          <div class="contact-link-icon">
+            <i data-lucide="mail"></i>
+          </div>
           <div class="contact-link-label">
-            <span class="contact-link-type">Gmail</span>
+            <span class="contact-link-type">Email</span>
             <span class="contact-link-val">hkala402@gmail.com</span>
           </div>
         </a>
 
-        <a href="#" class="contact-link">
-          <div class="contact-link-icon">GH</div>
+        <!-- PHONE -->
+        <a href="tel:7417517798" class="contact-link">
+          <div class="contact-link-icon">
+            <i data-lucide="phone"></i>
+          </div>
+          <div class="contact-link-label">
+            <span class="contact-link-type">Phone</span>
+            <span class="contact-link-val">7417517798</span>
+          </div>
+        </a>
+
+        <!-- GITHUB -->
+        <a href="https://github.com/Hkala402" target="_blank" class="contact-link">
+          <div class="contact-link-icon">
+            <i data-lucide="github"></i>
+          </div>
           <div class="contact-link-label">
             <span class="contact-link-type">GitHub</span>
-            <span class="contact-link-val">https://github.com/Hkala402/himanshukala.co.in</span>
+            <span class="contact-link-val">Hkala402</span>
           </div>
         </a>
 
@@ -237,6 +260,10 @@
     </div>
   </div>
 </footer>
+
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>

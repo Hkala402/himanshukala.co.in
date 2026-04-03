@@ -95,8 +95,8 @@
    ► Replace BOT_TOKEN and CHAT_ID below
    ► Instructions at bottom of this file
 ══════════════════════════════════════ */
-var TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
-var TELEGRAM_CHAT_ID   = "YOUR_CHAT_ID_HERE";
+var TELEGRAM_BOT_TOKEN = "7686500618:AAEdScvEW0VTtzP7Nw-5Gq_c9ZC9IAnRh1A";
+var TELEGRAM_CHAT_ID   = "8494765723";
 
 function sendToTelegram(message) {
   if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN === "YOUR_BOT_TOKEN_HERE") return;

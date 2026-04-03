@@ -111,7 +111,7 @@ function sendChat() {
   appendMsg(msg, "user");
   chatHistory.push({ role: "user", content: msg });
   showTyping();
-  callClaude(msg);
+  handleLocalResponse(msg);
 }
 
 function appendMsg(text, who) {

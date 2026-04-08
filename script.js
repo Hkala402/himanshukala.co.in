@@ -77,17 +77,33 @@
   if(form){
     form.addEventListener("submit",function(e){
       e.preventDefault();
-      var name=document.getElementById("cf-name").value;
-      var em=document.getElementById("cf-email").value;
-      var sub=document.getElementById("cf-subject").value;
-      var msg=document.getElementById("cf-message").value;
-      sendToTelegram("📬 CONTACT FORM\n👤 "+name+"\n📧 "+em+"\n📌 "+sub+"\n💬 "+msg);
-      setTimeout(function(){
-        var s=document.getElementById("cf-success");if(s)s.style.display="block";form.reset();
-      },600);
+      var data=new FormData(form);
+      fetch(form.action,{
+        method:"POST",
+        body:data,
+        headers:{"Accept":"application/json"}
+      })
+      .then(function(res){
+        if(res.ok){
+          var s=document.getElementById("cf-success");
+          if(s)s.style.display="block";
+          form.reset();
+          sendToTelegram(
+            "📬 <b>CONTACT FORM</b>\n🌐 himanshukala.co.in\n"+
+            "👤 "+(data.get("name")||"N/A")+"\n"+
+            "📧 "+(data.get("email")||"N/A")+"\n"+
+            "📌 "+(data.get("subject")||"N/A")+"\n"+
+            "💬 "+(data.get("message")||"N/A")
+          );
+        } else {
+          alert("Something went wrong. Please email: hkala402@gmail.com");
+        }
+      })
+      .catch(function(){
+        alert("Connection error. Please email: hkala402@gmail.com");
+      });
     });
   }
-
 })();
 
 /* ══════════════════════════════════════
